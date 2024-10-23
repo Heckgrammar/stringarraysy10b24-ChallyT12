@@ -16,14 +16,33 @@
             /* use fixed (hard coded) string arrays to test your code. 
              Call your subroutine using your test arrays from Main() routine
              and return the result to Main() */
-            
+
             /* Starter code for your subroutine has been provided*/
-
+            string[] array1 = { "h", "e", "r", "l", "u", ",", "h", "p", "w", " ", "j", "s", "e", " ", "p", "o", "o" };
+            string[] array2 = { "y", "o", "l", "l", "o" };
+            Console.WriteLine(Prefix(array1, array2));
         }
-        static bool Prefix(string[] wor, string[] pre) 
+        static bool Prefix(string[] wor, string[] pre)
         {
-
-            return;
+            if (pre.Length > wor.Length)
+            {
+                return false;
+            }
+            else
+            {
+                bool IsPrefix = true;
+                int i = 0;
+                while (i < pre.Length)
+                {
+                    if (wor[i] != pre[i])
+                    {
+                        IsPrefix = false;
+                    }
+                    i++;
+                }
+                return IsPrefix;
+            }
         }
     }
 }
+
